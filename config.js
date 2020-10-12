@@ -1,5 +1,5 @@
 var config = {
-    style: 'mapbox://styles/agunaseelan/ckfq2pbc00but19t36w5g6vfk',
+    style: 'mapbox://styles/agunaseelan/ckfq2pbc00but19t36w5g6vfk?optimize=true',
     accessToken: 'pk.eyJ1IjoiYWd1bmFzZWVsYW4iLCJhIjoiY2s5N244N3dlMGdwdjNudGE4NnJrajhtciJ9.qBoDNpS3X6DnDp0YhycbPA',
     // showMarkers: true,
     theme: 'light',
