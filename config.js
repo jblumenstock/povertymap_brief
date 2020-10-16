@@ -252,7 +252,7 @@ var config = {
                 title: 'THIS METHOD PROVIDES ESTIMATES OF THE WEALTH OF EVERY 2.4KM MICRO-REGION ON THE PLANET',
                 description: 'The estimates we produce are available at multiple scales, from the tiniest 2.4km grid cell to the level of states and countries. These estimates are provided free for public use in the hope that they enable targeted policy response to the COVID-19 pandemic, provide the foundation for new insights into the causes and consequences of economic development and growth, and promote responsible policymaking in support of the Sustainable Development Goals.',
                 location: {
-                    center: { lon: 6.76607, lat: 4.82800 },
+                    center: { lon: 5.82859, lat: 4.88982 },
                     zoom: 8.04,
                     pitch: 60,
                     bearing: 30.4
