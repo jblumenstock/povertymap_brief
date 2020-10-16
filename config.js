@@ -229,7 +229,7 @@ var config = {
                 title: 'HAVING COMBINED LOW-RESOLUTION “GROUND TRUTH” WITH HIGH-RESOLUTION “BIG DATA”, WE FILL IN THE GAPS',
                 description: 'For millions of micro-regions, we know the wealth of the region (from surveys), and we also have several sources of non-traditional data (from satellites and other sources). We use these matched data to train a supervised machine learning model that predicts wealth from non-traditional data.<br><br>This allows us to produce estimates of the relative wealth and absolute wealth of every micro-region of the earth’s surface. The model “learns” which features are useful in predicting wealth. For instance, villages with good cell phone coverage, and with lots of paved surface, tend to be wealthier.',
                 location: {
-                    center: { lon: 5.9484, lat: 5.6218 },
+                    center: { lon: 5.69875, lat: 5.32669 },
                     zoom: 9.11,
                     pitch: 15.00, 
                     bearing: 0.00
@@ -252,7 +252,7 @@ var config = {
                 title: 'THIS METHOD PROVIDES ESTIMATES OF THE WEALTH OF EVERY 2.4KM MICRO-REGION ON THE PLANET',
                 description: 'The estimates we produce are available at multiple scales, from the tiniest 2.4km grid cell to the level of states and countries. These estimates are provided free for public use in the hope that they enable targeted policy response to the COVID-19 pandemic, provide the foundation for new insights into the causes and consequences of economic development and growth, and promote responsible policymaking in support of the Sustainable Development Goals.',
                 location: {
-                    center: { lon: 5.065, lat: 6.001 },
+                    center: { lon: 5.69875, lat: 5.32669 },
                     zoom: 8.04,
                     pitch: 60,
                     bearing: 30.4
