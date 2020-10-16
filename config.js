@@ -167,13 +167,13 @@ var config = {
                 },
                 onChapterEnter: [
                     {
-                        layer: 'mapbox-terrain-rgb',
+                        layer: 'terrain',
                         opacity: 0.7
                     }
                 ],
                 onChapterExit: [
                     {
-                        layer: 'mapbox-terrain-rgb',
+                        layer: 'terrain',
                         opacity: 0
                     }
                 ]
