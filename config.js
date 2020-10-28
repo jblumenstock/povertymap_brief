@@ -1,5 +1,5 @@
 var config = {
-    style: 'mapbox://styles/agunaseelan/ckejfywnp4qel19nzivkdlfna?optimize=true',
+    style: 'mapbox://styles/agunaseelan/ckejfywnp4qel19nzivkdlfna/draft?optimize=true',
     accessToken: 'pk.eyJ1IjoiYWd1bmFzZWVsYW4iLCJhIjoiY2s5N244N3dlMGdwdjNudGE4NnJrajhtciJ9.qBoDNpS3X6DnDp0YhycbPA',
     // showMarkers: true,
     theme: 'light',
@@ -34,12 +34,20 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'Poverty',
+                    opacity: 0.75
+                }, 
+                {
+                    layer: 'mapbox-satellite-shown',
                     opacity: 1
-                }
+                },
             ],
             onChapterExit: [
                 {
                     layer: 'Poverty',
+                    opacity: 0
+                }, 
+                {
+                    layer: 'mapbox-satellite-shown',
                     opacity: 0
                 }
             ]
@@ -237,12 +245,20 @@ var config = {
                 onChapterEnter: [
                     {
                         layer: 'Poverty',
+                        opacity: 0.75
+                    }, 
+                    {
+                        layer: 'mapbox-satellite-shown',
                         opacity: 1
                     }
                 ],
                 onChapterExit: [
                     {
                         layer: 'Poverty',
+                        opacity: 0
+                    }, 
+                    {
+                        layer: 'mapbox-satellite-shown',
                         opacity: 0
                     }
                 ]
@@ -260,13 +276,21 @@ var config = {
                 onChapterEnter: [
                     {
                         layer: 'Poverty',
+                        opacity: 0.75
+                    }, 
+                    {
+                        layer: 'mapbox-satellite-shown',
                         opacity: 1
                     }
                 ],
                 onChapterExit: [
                     {
                         layer: 'Poverty',
-                        opacity: 1
+                        opacity: 0
+                    }, 
+                    {
+                        layer: 'mapbox-satellite-shown',
+                        opacity: 0
                     }
                 ]
             }
