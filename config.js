@@ -1,6 +1,6 @@
 var config = {
     style: 'mapbox://styles/agunaseelan/ckejfywnp4qel19nzivkdlfna?optimize=true',
-    accessToken: 'pk.eyJ1IjoiYWd1bmFzZWVsYW4iLCJhIjoiY2s5N244N3dlMGdwdjNudGE4NnJrajhtciJ9.qBoDNpS3X6DnDp0YhycbPA',
+    accessToken: 'pk.eyJ1IjoiamJsdW1lbnN0b2NrIiwiYSI6ImNqeWdlbTZzNjAwOWUzbW11eXpwMGRxbXcifQ.EiwlyQqbIrUUXMhlUtMx2A',
     // showMarkers: true,
     theme: 'light',
     alignment: 'left',
