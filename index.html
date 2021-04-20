@@ -79,6 +79,16 @@
             max-width: 850px;
             margin: 1em auto 1em auto;
         }
+        #header p.continueText {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            text-align: left;
+            font-size: 1.2em;
+            max-width: 850px;
+            margin: 1em auto 1em auto;
+            text-align: center;
+            font-weight: bold;
+        }
         #features h3 {
             font-weight: 700;
             text-transform: uppercase;
@@ -177,8 +187,8 @@
             border: 16px solid #f3f3f3; /* Light grey */
             border-top: 16px solid #3b4577; /* Blue */
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             position: absolute;
             left: 50%;
             -webkit-animation: spin 2s linear infinite;
@@ -296,13 +306,16 @@ if (config.description) {
 // adding loader
 var loader = document.createElement('div');
 loader.classList.add('loader');
+loader.setAttribute('id', 'loader');
 header.appendChild(loader);
 
 if (config.continue) {
     var continueTextBox = document.createElement('div');
     var continueText = document.createElement('p');
     continueText.innerHTML = config.continue; 
+    continueText.classList.add("continueText");
     continueTextBox.setAttribute('style', 'display: none;');
+    continueTextBox.setAttribute('id', 'continueTextBox');
     continueTextBox.classList.add('animate-bottom');
     continueTextBox.appendChild(continueText);
     header.appendChild(continueTextBox);
@@ -310,12 +323,12 @@ if (config.continue) {
 
 var myVar;
 function server() {
-  myVar = setTimeout(waiting, 3000);
+  myVar = setTimeout(waiting, 4000);
 }
 
 function waiting() {
     document.getElementById('loader').style.display = 'none';
-    document.getElementById('continueText').style.display = "block"; 
+    document.getElementById('continueTextBox').style.display = "block"; 
 }
 
 // If the header has anything in it, it gets appended to the story
