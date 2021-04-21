@@ -16,7 +16,7 @@ var config = {
     endingImage2: 'images/nlssvsat.jp2',
     endingTitle2: "Want to learn more?",
     endingText3: "The best way to get a feel for the data is to <a href=https://didl.berkeley.edu/maps>explore the interactive interface</a>. There, you can zoom in and out, pan and tilt, search for specific regions, help us identify errors in the estimates, and download the underlying data.<br><br>If you want more information on the science behind these maps, please read the academic paper, “Micro-Estimates of Wealth for the Developing World”. The full citation is below::<ul><li>Chi, G., Chatterjee, S., Fang, H., and Blumenstock, J.E., 2020 (under review). Micro-Estimates of Wealth for the Developing World.</li></ul>If you want to learn more about new approaches to poverty mapping with non-traditional data, take a look at some of the papers on the syllabus of <a href=https://sites.ischool.berkeley.edu/bdd/>Big Data and Development</a> course that Prof. Blumenstock teaches at U.C. Berkeley. In particular, these closely-related papers provide good background:<ul><li>Blumenstock, J., Cadamuro, G., On, R., 2015. <a href=https://science.sciencemag.org/content/350/6264/1073>Predicting poverty and wealth from mobile phone metadata</a>. Science 350, 1073–1076. doi:10.1126/science.aac4420</li><li>Jean, N., Burke, M., Xie, M., Davis, W.M., Lobell, D.B., Ermon, S., 2016. <a href=https://science.sciencemag.org/content/353/6301/790>Combining satellite imagery and machine learning to predict poverty</a>. Science 353, 790–794. </li></ul>Finally, you can learn more about the <a href=http://didl.berkeley.edu>Data-Intensive Development Lab</a> and the <a href=http://cega.berkeley.edu>Center for Effective Global Action</a>, the two research teams at U.C. Berkeley behind this effort.",
-    // footer: 'Chi, Guanghua; Fang, Han; Chatterjee, Sourav; Blumenstock, Joshua. 2020. “Micro-Estimates of Wealth for the Developing World.” Working paper available by request.<br>"Combining satellite imagery and machine learning ... - Science." Accessed July 20, 2020. <a href="https://science.sciencemag.org/content/353/6301/790" target="_blank">https://science.sciencemag.org/content/353/6301/790</a>. <br> "Using luminosity data as a proxy for economic statistics | PNAS." Accessed July 20, 2020. <a href="https://www.pnas.org/content/108/21/8589" target="_blank">https://www.pnas.org/content/108/21/8589</a>.<br> "Predicting poverty and wealth from mobile phone ... - Science." Accessed July 20, 2020. <a href="https://science.sciencemag.org/content/350/6264/1073" target="_blank">https://science.sciencemag.org/content/350/6264/1073</a>',
+    //footer: 'Chi, Guanghua; Fang, Han; Chatterjee, Sourav; Blumenstock, Joshua. 2020. “Micro-Estimates of Wealth for the Developing World.” Working paper available by request.<br>"Combining satellite imagery and machine learning ... - Science." Accessed July 20, 2020. <a href="https://science.sciencemag.org/content/353/6301/790" target="_blank">https://science.sciencemag.org/content/353/6301/790</a>. <br> "Using luminosity data as a proxy for economic statistics | PNAS." Accessed July 20, 2020. <a href="https://www.pnas.org/content/108/21/8589" target="_blank">https://www.pnas.org/content/108/21/8589</a>.<br> "Predicting poverty and wealth from mobile phone ... - Science." Accessed July 20, 2020. <a href="https://science.sciencemag.org/content/350/6264/1073" target="_blank">https://science.sciencemag.org/content/350/6264/1073</a>',
     footerAttribution: '<a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> | <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> </a>',
     logos: "images/logos.webp",
     chapters: [
@@ -28,9 +28,11 @@ var config = {
             description: 'We have developed interactive maps that make it possible to explore fine-grained estimates of wealth and poverty around the world. The estimates are computed from satellite imagery, internet data, and other non-traditional sources of data.<br><br>The height and color of each grid cell help visualize micro-regional wealth. Cell height indicates absolute wealth (relative to the world), and cell color indicates relative wealth (relative to other regions of the country).<br><br>Scroll down to read more about how it\'s made!',
             location: {
                 center: { lon: 30.9725, lat: -29.1729 }, 
-                zoom: 9.11,
+                zoom: 9.0,
                 pitch: 60,
-                bearing: -19.7 
+                bearing: -19.7, 
+                speed: 1, 
+                curve: .8
             },
             onChapterEnter: [
                 {
@@ -63,7 +65,9 @@ var config = {
                     center: { lon: 14.72593, lat: 0.91130 },
                     zoom: 2.73,
                     pitch: 0.00,
-                    bearing: 0.00
+                    bearing: 0.00, 
+                    speed:.8, 
+                    curve: 1
                 },
                 onChapterEnter: [
                     {
@@ -108,7 +112,8 @@ var config = {
                     center: { lon: 8.3852703, lat: 9.6085155 }, 
                     zoom: 16.74,
                     pitch: 0.00,
-                    bearing: 0.00
+                    bearing: 0.00, 
+                    speed: 1
                 },
                 onChapterEnter: [
                     {
@@ -130,7 +135,9 @@ var config = {
                     center: { lon: 3.97906, lat: 7.84728 },
                     zoom: 6.77,
                     pitch: 0.00,
-                    bearing: 0.00
+                    bearing: 0.00, 
+                    speed: 1, 
+                    curve: .8
                 },
                 onChapterEnter: [
                     {
@@ -172,7 +179,9 @@ var config = {
                     center: { lon: 9.60045, lat: 6.36860 },
                     zoom: 6.87,
                     pitch: 60.00,
-                    bearing: -12.74
+                    bearing: -12.74, 
+                    speed: .7, 
+                    curve: 1
                 },
                 onChapterEnter: [
                     {
@@ -194,7 +203,9 @@ var config = {
                     center: { lon: 4.7, lat: 9.00113 },
                     zoom: 5.49,
                     pitch: 0.00, 
-                    bearing: 0.00
+                    bearing: 0.00, 
+                    speed: .8, 
+                    curve: 1
                 },
                 onChapterEnter: [
                     {
@@ -241,7 +252,9 @@ var config = {
                     center: { lon: 6.76607, lat: 4.82800 },
                     zoom: 9.11,
                     pitch: 15.00, 
-                    bearing: 0.00
+                    bearing: 0.00, 
+                    speed: .8, 
+                    curve: 1
                 },
                 onChapterEnter: [
                     {
@@ -272,7 +285,9 @@ var config = {
                     center: { lon: 5.82859, lat: 4.88982 },
                     zoom: 8.04,
                     pitch: 60,
-                    bearing: 30.4
+                    bearing: 30.4, 
+                    speed: .8, 
+                    curve: 1
                 },
                 onChapterEnter: [
                     {
