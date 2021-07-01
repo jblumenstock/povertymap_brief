@@ -142,10 +142,10 @@ var config = {
                     curve: 1
                 },
                 onChapterEnter: [
-                    {
-                        layer: 'terrain',
-                        opacity: 1
-                    },
+                    //{
+                      //  layer: 'terrain',
+                        //opacity: 1
+                    //},
                     {
                         layer: 'nightlights_bw',
                         opacity: 0.85
