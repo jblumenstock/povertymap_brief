@@ -304,10 +304,12 @@ if (config.description) {
 }
 
 // adding loader
-var loader = document.createElement('div');
-loader.classList.add('loader');
-loader.setAttribute('id', 'loader');
-header.appendChild(loader);
+if (config.loader) {
+    var loader = document.createElement('div');
+    loader.classList.add('loader');
+    loader.setAttribute('id', 'loader');
+    header.appendChild(loader);
+}
 
 if (config.continue) {
     var continueTextBox = document.createElement('div');
@@ -321,16 +323,17 @@ if (config.continue) {
     header.appendChild(continueTextBox);
 }
 
-var myVar;
-function server() {
-  myVar = setTimeout(waiting, 3000);
-}
+if (config.loader) {
+    var myVar;
+    function server() {
+      myVar = setTimeout(waiting, config.loader_time);
+    }
 
-function waiting() {
-    document.getElementById('loader').style.display = 'none';
-    document.getElementById('continueTextBox').style.display = "block"; 
+    function waiting() {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('continueTextBox').style.display = "block"; 
+    }
 }
-
 // If the header has anything in it, it gets appended to the story
 if (header.innerText.length > 0) {
     header.classList.add(config.theme);

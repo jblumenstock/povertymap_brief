@@ -19,6 +19,8 @@ var config = {
     //footer: 'Chi, Guanghua; Fang, Han; Chatterjee, Sourav; Blumenstock, Joshua. 2020. “Micro-Estimates of Wealth for the Developing World.” Working paper available by request.<br>"Combining satellite imagery and machine learning ... - Science." Accessed July 20, 2020. <a href="https://science.sciencemag.org/content/353/6301/790" target="_blank">https://science.sciencemag.org/content/353/6301/790</a>. <br> "Using luminosity data as a proxy for economic statistics | PNAS." Accessed July 20, 2020. <a href="https://www.pnas.org/content/108/21/8589" target="_blank">https://www.pnas.org/content/108/21/8589</a>.<br> "Predicting poverty and wealth from mobile phone ... - Science." Accessed July 20, 2020. <a href="https://science.sciencemag.org/content/350/6264/1073" target="_blank">https://science.sciencemag.org/content/350/6264/1073</a>',
     footerAttribution: '<a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> | <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> </a>',
     logos: "images/logos.webp",
+    loader: true, 
+    loader_time: 3000,
     chapters: [
         {
             id: 'FullMap',
@@ -136,12 +138,12 @@ var config = {
                     zoom: 6.77,
                     pitch: 0.00,
                     bearing: 0.00, 
-                    speed: 1, 
-                    curve: .8
+                    speed: .8, 
+                    curve: 1
                 },
                 onChapterEnter: [
                     {
-                        layer: 'mapbox-satellite-shown',
+                        layer: 'terrain',
                         opacity: 1
                     },
                     {
