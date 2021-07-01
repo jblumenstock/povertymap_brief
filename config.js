@@ -20,7 +20,7 @@ var config = {
     footerAttribution: '<a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> | <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> </a>',
     logos: "images/logos.webp",
     loader: true, 
-    loader_time: 3000,
+    loader_time: 4000,
     chapters: [
         {
             id: 'FullMap',
@@ -112,7 +112,8 @@ var config = {
                 description: 'For each of the locations where surveys are conducted, we collect several sources of non-traditional “big data” that can be matched to the GPS coordinates of the surveys.<br><br>Rich information can be derived from high-resolution satellite imagery. These aerial photographs contain visual cues about the living conditions of the region such as the quality of roofing material, the size of farm plots, and the quality of roads.',
                 location: {
                     center: { lon: 8.3852703, lat: 9.6085155 }, 
-                    zoom: 16.74,
+                    //prev: 16.74
+                    zoom: 14.00,
                     pitch: 0.00,
                     bearing: 0.00, 
                     speed: 1
@@ -182,7 +183,7 @@ var config = {
                     zoom: 6.87,
                     pitch: 60.00,
                     bearing: -12.74, 
-                    speed: .7, 
+                    speed: .8, 
                     curve: 1
                 },
                 onChapterEnter: [
