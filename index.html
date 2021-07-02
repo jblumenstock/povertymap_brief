@@ -4,9 +4,9 @@
     <meta charset='utf-8' />
     <title>Global Micro-Estimates of Wealth and Poverty</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js' async></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
-    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js" async></script>
     <script src="https://unpkg.com/scrollama"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
 
@@ -25,7 +25,10 @@
         #header {
             margin: auto;
             min-height: 50vh;
-            padding: 2vh;
+            padding: 10vh;
+            width: 100%;
+            height: 100%;
+            background-color: white;
         }
         #features {
             padding-top: 80vh;
@@ -67,6 +70,7 @@
             margin: 0.5em auto 0.8em auto;
             color: #4c4b4b;
         }
+
         #header p {
             font-family: 'Montserrat', sans-serif;
             font-weight: 300;
@@ -74,6 +78,16 @@
             font-size: 1.2em;
             max-width: 850px;
             margin: 1em auto 1em auto;
+        }
+        #header p.continueText {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            text-align: left;
+            font-size: 1.2em;
+            max-width: 850px;
+            margin: 1em auto 1em auto;
+            text-align: center;
+            font-weight: bold;
         }
         #features h3 {
             font-weight: 700;
@@ -169,6 +183,48 @@
             width: 100%;
         }
 
+        #header .loader {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3b4577; /* Blue */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        /* Add animation to "page content" */
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1.2s;
+            animation-name: animatebottom;
+            animation-duration: 1.2s
+        }
+
+        @-webkit-keyframes animatebottom {
+            from { bottom:-100px; opacity:0 } 
+            to { bottom:0px; opacity:1 }
+        }
+
+        @keyframes animatebottom { 
+            from{ bottom:-100px; opacity:0 } 
+            to{ bottom:0; opacity:1 }
+            }
+
         @media (max-width: 750px) {
             #features {
                 width: 90vw;
@@ -184,7 +240,7 @@
 
         </style>
 </head>
-<body>
+<body onload="server()" style="margin:0;">
 
 <div id="map"></div>
 <div id="story"></div>
@@ -224,7 +280,6 @@ features.classList.add(alignments[config.alignment]);
 features.setAttribute('id', 'features');
 
 var header = document.createElement('div');
-
 // If the content exists, assign it to the 'header' element
 if (config.toptitle) {
     var toptitle = document.createElement('h4');
@@ -248,6 +303,37 @@ if (config.description) {
     header.appendChild(descriptionText);
 }
 
+// adding loader
+if (config.loader) {
+    var loader = document.createElement('div');
+    loader.classList.add('loader');
+    loader.setAttribute('id', 'loader');
+    header.appendChild(loader);
+}
+
+if (config.continue) {
+    var continueTextBox = document.createElement('div');
+    var continueText = document.createElement('p');
+    continueText.innerHTML = config.continue; 
+    continueText.classList.add("continueText");
+    continueTextBox.setAttribute('style', 'display: none;');
+    continueTextBox.setAttribute('id', 'continueTextBox');
+    continueTextBox.classList.add('animate-bottom');
+    continueTextBox.appendChild(continueText);
+    header.appendChild(continueTextBox);
+}
+
+if (config.loader) {
+    var myVar;
+    function server() {
+      myVar = setTimeout(waiting, config.loader_time);
+    }
+
+    function waiting() {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('continueTextBox').style.display = "block"; 
+    }
+}
 // If the header has anything in it, it gets appended to the story
 if (header.innerText.length > 0) {
     header.classList.add(config.theme);
@@ -393,13 +479,13 @@ map.on("load", function() {
     scroller
     .setup({
         step: '.step',
-        offset: 0.5,
+        offset: 0.6,
         progress: true
     })
     .onStepEnter(response => {
         var chapter = config.chapters.find(chap => chap.id === response.element.id);
         response.element.classList.add('active');
-        map.flyTo(chapter.location);
+        map.flyTo(chapter.location); 
         if (config.showMarkers) {
             marker.setLngLat(chapter.location.center);
         }
