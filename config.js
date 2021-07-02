@@ -183,7 +183,7 @@ var config = {
                     zoom: 6.87,
                     pitch: 60.00,
                     bearing: -12.74, 
-                    speed: .8, 
+                    speed: .7, 
                     curve: 1
                 },
                 onChapterEnter: [
